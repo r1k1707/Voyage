@@ -1,11 +1,7 @@
 using UnityEngine;
 
-public class MainMenu : MonoBehaviour
+public class PauseMenuButtons : MonoBehaviour
 {
-    public static bool GameMenu;
-    public GameObject mainMenu;
-
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

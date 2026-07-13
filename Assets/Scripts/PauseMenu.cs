@@ -8,20 +8,11 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-
+        pauseMenu.SetActive(false);
     }
 
     private void Update()
     {
         
-    }
-
-    public void QuitGame()
-    {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
     }
 }

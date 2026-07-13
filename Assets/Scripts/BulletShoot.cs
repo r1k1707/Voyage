@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BulletShoot : MonoBehaviour
 {
-    public float moveSpeed;
+    public float moveSpeed = 5;
     public GameObject bullets;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

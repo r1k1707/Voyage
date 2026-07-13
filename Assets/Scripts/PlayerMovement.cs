@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 3;
-    public float hInput;
-    public float vInput;
+    private float hInput;
+    private float vInput;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

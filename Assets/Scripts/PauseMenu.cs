@@ -3,25 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GamePaused = true;
+    public static bool GamePaused = false;
     public GameObject pauseMenu;
-
-
-    public void PauseGame()
-    {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        GamePaused = true;
-
-    }
-
-    public void ResumeGame()
-    {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1.0f;
-        GamePaused = false;
-
-    }
 
     private void Start()
     {
@@ -31,5 +14,14 @@ public class PauseMenu : MonoBehaviour
     private void Update()
     {
         
+    }
+
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
     }
 }

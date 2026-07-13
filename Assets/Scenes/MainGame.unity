@@ -626,7 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ecc86f80e99d644b6d5b059e08e0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
-  pauseMenu: {fileID: 482501580}
+  pauseMenu: {fileID: 0}
 --- !u!114 &482501582
 MonoBehaviour:
   m_ObjectHideFlags: 0

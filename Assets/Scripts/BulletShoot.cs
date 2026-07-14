@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BulletShoot : MonoBehaviour
 {
-    public float moveSpeed;
     public GameObject bulletsPrefab;
     public float time = 1.0f;
     public float timer = 0;
@@ -19,7 +18,7 @@ public class BulletShoot : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= time)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetButtonDown("Fire1"))
             {
                 shootBullet();
                 timer = 0;
@@ -29,10 +28,7 @@ public class BulletShoot : MonoBehaviour
 
     void shootBullet()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
             Instantiate(bulletsPrefab, transform.position, Quaternion.identity);
             Debug.Log("yeah fight back");
-        }
     }
 }

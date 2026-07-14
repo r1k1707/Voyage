@@ -23,5 +23,10 @@ public class Bullets : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject); 
         }
+        if (collision.gameObject.tag == "Boundary")
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
 }

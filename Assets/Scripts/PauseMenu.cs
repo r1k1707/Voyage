@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-
+        gameObject.SetActive(false);
     }
 
      void Update()

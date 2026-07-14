@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
             float randomX = Random.Range(-2, 2);
             float randomY = Random.Range( 3, 6);
             enemy.transform.position = new Vector3(randomX, randomY, 0);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
         }
     }
 }

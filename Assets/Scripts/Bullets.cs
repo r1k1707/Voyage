@@ -3,11 +3,12 @@ using UnityEngine;
 public class Bullets : MonoBehaviour
 {
     public float moveSpeed;
+    private PointManager pointManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        pointManager = GameObject.Find("PointManager").GetComponent<PointManager>();
     }
 
     // Update is called once per frame
@@ -21,6 +22,7 @@ public class Bullets : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(collision.gameObject);
+            pointManager.UpDateScore(10);
             Destroy(gameObject); 
         }
         if (collision.gameObject.tag == "Boundary")

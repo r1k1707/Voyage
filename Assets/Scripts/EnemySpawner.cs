@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
         {
             GameObject enemy = Instantiate(enemyPrefab);
             float randomX = Random.Range(-1, 1);
-            float randomY = Random.Range(3, 6);
+            float randomY = Random.Range(4, 15);
             enemy.transform.position = new Vector3(randomX, randomY, 0);
             yield return new WaitForSeconds(enemySpawnRate);
         }

@@ -7,7 +7,7 @@ public class PointManager : MonoBehaviour
     public int score;
     public TMP_Text scoreText;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // start makes the score go back to 0
     void Start()
     {
         scoreText.text = "Score: " + score;

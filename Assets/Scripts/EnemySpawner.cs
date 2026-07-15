@@ -5,10 +5,10 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
 
-    [SerializeField] GameObject enemyPrefab;
+    [SerializeField] GameObject enemyPrefab; // Place enemy prefab in here
     [SerializeField] int enemyAmount;
 
-    [SerializeField] public float enemySpawnRate;
+    [SerializeField] private float enemySpawnRate; // Time between spawns - can edit the amount
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < enemyAmount; i++)
         {
             GameObject enemy = Instantiate(enemyPrefab);
-            float randomX = Random.Range(-2, 2);
+            float randomX = Random.Range(-1, 1);
             float randomY = Random.Range(3, 6);
             enemy.transform.position = new Vector3(randomX, randomY, 0);
             yield return new WaitForSeconds(enemySpawnRate);

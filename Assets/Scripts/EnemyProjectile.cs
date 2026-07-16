@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Bullets : MonoBehaviour
+public class EnemyProjectile : MonoBehaviour
 {
-    public float moveSpeed;
+    public float speed;
     private PointManager pointManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -14,16 +14,14 @@ public class Bullets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.up  * moveSpeed * Time.deltaTime);
+        transform.Translate(Vector2.down * speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
-            pointManager.UpDateScore(25);
-            Destroy(gameObject);
+            pointManager.UpDateScore(-10);
         }
         if (collision.gameObject.tag == "Boundary")
         {

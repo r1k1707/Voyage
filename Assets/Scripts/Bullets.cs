@@ -23,7 +23,7 @@ public class Bullets : MonoBehaviour
         {
             Destroy(collision.gameObject);
             pointManager.UpDateScore(10);
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
         if (collision.gameObject.tag == "Boundary")
         {

@@ -21,7 +21,6 @@ public class EnemyProjectile : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
             pointManager.UpDateScore(-10);
 
         }

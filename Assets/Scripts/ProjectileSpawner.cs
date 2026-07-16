@@ -16,7 +16,7 @@ public class ProjectileSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnTimer = Time.deltaTime;
+        spawnTimer -= Time.deltaTime;
         if (spawnTimer <= 0)
         {
             Instantiate(enemyProjectile, transform.position, Quaternion.identity);

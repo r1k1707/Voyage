@@ -972,7 +972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyPrefab: {fileID: 5592756041541198747, guid: 5a8172d2b8781194d864ab28997798f5, type: 3}
   enemyAmount: 30
-  enemySpawnRate: 3
+  enemySpawnRate: 2
 --- !u!4 &679161133
 Transform:
   m_ObjectHideFlags: 0

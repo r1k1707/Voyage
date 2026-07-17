@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetButtonDown("Pause"))
         {
-            Debug.Log("Escape key pressed");
+            Debug.Log("game is PAUSED esc key pressed");
             if (!isPaused)
                 PauseGame();
             else 

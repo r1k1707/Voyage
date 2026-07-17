@@ -5,6 +5,7 @@ public class EnemyMovement : MonoBehaviour
     // for the enemy speed
     public float speed;
     public GameObject enemyPrefab;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,10 +28,7 @@ public class EnemyMovement : MonoBehaviour
         Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
 
         // if enemy leaves screen from bottom of screen, then destroy object
-        if (transform.position.y < min.y)
-        {
-            Destroy(gameObject);
-        }
+
 
     }
     private void OnTriggerEnter2D(Collider2D collision)

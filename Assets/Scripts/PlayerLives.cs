@@ -9,6 +9,8 @@ public class PlayerLives : MonoBehaviour
     public float invincibleTime = 1f;
     private SpriteRenderer spriteRenderer;
     private bool canTakeDamage = true;
+    private bool isDead;
+    public GameManagerUI gameManagerUI;
 
     void Start()
     {
@@ -46,8 +48,10 @@ public class PlayerLives : MonoBehaviour
         {
             livesUI[i].enabled = i < lives;
         }
-        if (lives <= 0)
+        if (lives <= 0 && !isDead)
         {
+            gameManagerUI.GameOver(); 
+            isDead = true;
             Debug.Log("ggs go next");
             Destroy(gameObject);
             return;

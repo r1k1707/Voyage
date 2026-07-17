@@ -1,4 +1,4 @@
-using UnityEngine;
+    using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
@@ -6,6 +6,7 @@ public class GameOverManager : MonoBehaviour
     public GameObject gameOver;
     public int lives = 3;
     private bool isDead;
+    [SerializeField] string sceneName;
 
     public void Start()
     {
@@ -14,7 +15,7 @@ public class GameOverManager : MonoBehaviour
 
     public void GameOver()
     {
-        if (lives <= 0)
+        if (lives <= 0 && !isDead)
         {
             gameOver.SetActive(true);
             Time.timeScale = 0;
@@ -22,7 +23,7 @@ public class GameOverManager : MonoBehaviour
         }
     }
 
-    public void LoadScene(string sceneName)
+    public void Retry()
     {
         SceneManager.LoadScene(sceneName);
     }

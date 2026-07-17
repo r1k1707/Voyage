@@ -374,6 +374,7 @@ MonoBehaviour:
   - {fileID: 1816723599}
   - {fileID: 1761852451}
   invincibleTime: 1
+  gameManager: {fileID: 446252807}
 --- !u!1 &93730844
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +465,6 @@ GameObject:
   - component: {fileID: 204136195}
   - component: {fileID: 204136194}
   - component: {fileID: 204136193}
-  - component: {fileID: 204136197}
   m_Layer: 5
   m_Name: GameOver_UI
   m_TagString: Untagged
@@ -555,20 +555,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &204136197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204136192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b8d15d691889ee48b680db2117887f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameOverManager
-  gameOver: {fileID: 1051529247}
-  lives: 3
 --- !u!1 &209477465
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,8 +670,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 446252806}
+  - component: {fileID: 446252807}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GameOverManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -706,6 +693,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &446252807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446252805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8d15d691889ee48b680db2117887f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameOverManager
+  gameOver: {fileID: 1051529247}
+  lives: 3
+  sceneName: MainGame
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,7 +1214,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 204136197}
+      - m_Target: {fileID: 446252807}
         m_TargetAssemblyTypeName: GameOverManager, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -2734,10 +2736,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 204136197}
+      - m_Target: {fileID: 446252807}
         m_TargetAssemblyTypeName: GameOverManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+        m_MethodName: Retry
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

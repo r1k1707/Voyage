@@ -20,8 +20,8 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < enemyAmount; i++)
         {
             GameObject enemy = Instantiate(enemyPrefab);
-            float randomX = Random.Range(-1, 1);
-            float randomY = Random.Range(4, 18);
+            float randomX = Random.Range(-1.0f, 1.0f);
+            float randomY = Random.Range(3.5f, 18.0f);
             enemy.transform.position = new Vector3(randomX, randomY, 0);
             yield return new WaitForSeconds(enemySpawnRate);
         }

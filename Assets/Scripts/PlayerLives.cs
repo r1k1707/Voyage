@@ -10,7 +10,7 @@ public class PlayerLives : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool canTakeDamage = true;
     private bool isDead;
-    public GameManagerUI gameManagerUI;
+    public GameOverManager gameOverManager;
 
     void Start()
     {
@@ -50,7 +50,7 @@ public class PlayerLives : MonoBehaviour
         }
         if (lives <= 0 && !isDead)
         {
-            gameManagerUI.GameOver(); 
+            gameOverManager.GameOver();
             isDead = true;
             Debug.Log("ggs go next");
             Destroy(gameObject);

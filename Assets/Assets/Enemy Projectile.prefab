@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyProjectile
   speed: 3
+  bulletsPrefab: {fileID: 841368431842115994}
 --- !u!61 &6361469658095709028
 BoxCollider2D:
   m_ObjectHideFlags: 0

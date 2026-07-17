@@ -4,6 +4,7 @@ public class Bullets : MonoBehaviour
 {
     public float moveSpeed;
     private PointManager pointManager;
+    public GameObject bulletsPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,6 +16,10 @@ public class Bullets : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.up  * moveSpeed * Time.deltaTime);
+        if (transform.position.y <= -6)
+        {
+            Destroy(bulletsPrefab);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,11 +28,6 @@ public class Bullets : MonoBehaviour
         {
             Destroy(collision.gameObject);
             pointManager.UpDateScore(25);
-            Destroy(gameObject);
-        }
-        if (collision.gameObject.tag == "Boundary")
-        {
-            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
     }

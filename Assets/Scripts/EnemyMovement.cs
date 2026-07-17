@@ -28,15 +28,10 @@ public class EnemyMovement : MonoBehaviour
         Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
 
         // if enemy leaves screen from bottom of screen, then destroy object
-
-
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Boundary")
+        if (transform.position.y <= -6)
         {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            Destroy(enemyPrefab);
         }
+
     }
 }

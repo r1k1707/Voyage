@@ -152,3 +152,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullets
   moveSpeed: 7
+  bulletsPrefab: {fileID: 8898078101856614384}

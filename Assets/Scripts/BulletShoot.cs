@@ -8,11 +8,6 @@ public class BulletShoot : MonoBehaviour
     public float time = 1.0f;
     public float timer = 0;
 
-    void Start()
-    {
-
-    }
-
     private void Update()
     {
         timer += Time.deltaTime;

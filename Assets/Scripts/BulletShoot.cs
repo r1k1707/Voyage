@@ -23,7 +23,7 @@ public class BulletShoot : MonoBehaviour
 
     void shootBullet()
     {
-            Instantiate(bulletsPrefab, transform.position, Quaternion.identity);
-            Debug.Log("yeah fight back");
+        Instantiate(bulletsPrefab, transform.position, Quaternion.identity);
+        Debug.Log("yeah fight back");
     }
 }

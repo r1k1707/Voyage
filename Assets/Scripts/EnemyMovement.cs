@@ -26,12 +26,12 @@ public class EnemyMovement : MonoBehaviour
 
         // this refers to the bottom-left point of the screen
         Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
-
-        // if enemy leaves screen from bottom of screen, then destroy object
-        if (transform.position.y <= -6)
+    }
+    private void OnTriggerEnter2D(Collider2D collision)     // if enemy leaves screen from bottom of screen, then destroy object
+    {
+        if (collision.CompareTag("Despawn"))
         {
             Destroy(enemyPrefab);
         }
-
     }
 }

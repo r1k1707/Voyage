@@ -16,10 +16,6 @@ public class EnemyProjectile : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.down * speed * Time.deltaTime);
-        if (transform.position.y <= -6)
-        {
-            Destroy(bulletsPrefab);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,6 +23,10 @@ public class EnemyProjectile : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             pointManager.UpDateScore(0);
+        }
+        if (collision.CompareTag("Despawn"))
+        {
+            Destroy(bulletsPrefab);
         }
     }
 }

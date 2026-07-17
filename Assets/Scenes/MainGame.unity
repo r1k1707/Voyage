@@ -471,7 +471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &204136193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,6 +567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8d15d691889ee48b680db2117887f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverManager
+  gameOver: {fileID: 1051529247}
+  lives: 3
 --- !u!1 &209477465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,7 +1273,7 @@ GameObject:
   - component: {fileID: 872277596}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1307,7 +1309,7 @@ GameObject:
   - component: {fileID: 1051529250}
   - component: {fileID: 1051529249}
   m_Layer: 5
-  m_Name: PausePanel
+  m_Name: GameOverPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

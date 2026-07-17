@@ -21,7 +21,7 @@ public class EnemyProjectile : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            pointManager.UpDateScore(-10);
+
         }
         if (collision.gameObject.tag == "Boundary")
         {

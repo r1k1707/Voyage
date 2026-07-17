@@ -4,7 +4,7 @@ public class EnemyMovement : MonoBehaviour
 {
     // for the enemy speed
     public float speed;
-    
+    public GameObject enemyPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,17 +18,26 @@ public class EnemyMovement : MonoBehaviour
         Vector2 position = transform.position;
 
         // Calculating the new position of enemies
-        position = new Vector2 (position.x, position.y - speed * Time.deltaTime);
+        position = new Vector2(position.x, position.y - speed * Time.deltaTime);
 
         // line to update the enemy position
         transform.position = position;
 
         // this refers to the bottom-left point of the screen
-        Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0,0));
+        Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
 
         // if enemy leaves screen from bottom of screen, then destroy object
         if (transform.position.y < min.y)
         {
+            Destroy(gameObject);
+        }
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Boundary")
+        {
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
     }

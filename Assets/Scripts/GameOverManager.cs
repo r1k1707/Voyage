@@ -14,7 +14,7 @@ public class GameOverManager : MonoBehaviour
     public void GameOver()
     {
         gameOverUI.SetActive(true);
-        Time.timeScale = 0;
+        Time.timeScale = 0.5f;
     }
 
     public void Retry()

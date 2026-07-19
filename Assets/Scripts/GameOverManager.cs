@@ -14,7 +14,7 @@ public class GameOverManager : MonoBehaviour
     public void GameOver()
     {
         gameOverUI.SetActive(true);
-        Time.timeScale = 0.5f;
+        Time.timeScale = 0f;
     }
 
     public void Retry()
@@ -25,6 +25,11 @@ public class GameOverManager : MonoBehaviour
 
     public void QuitGame()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
         Application.Quit();
     }
 }

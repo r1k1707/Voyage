@@ -5,7 +5,8 @@ public class TimerController : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime;
-    
+    public GameOverManager gameOverManager;
+
     void Update()
     {
         if (remainingTime > 0)
@@ -16,6 +17,7 @@ public class TimerController : MonoBehaviour
         else if (remainingTime < 0)
         {
             remainingTime = 0;
+            gameOverManager.GameOver();
         }
 
         int minutes = Mathf.FloorToInt(remainingTime / 60);

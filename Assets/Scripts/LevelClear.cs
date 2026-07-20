@@ -21,6 +21,7 @@ public class LevelClear : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             levelClear.SetActive(true);
+            Time.timeScale = 0f;
             Debug.Log("about time bro");
         }
     }

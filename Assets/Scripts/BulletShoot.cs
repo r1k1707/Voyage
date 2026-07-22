@@ -8,11 +8,6 @@ public class BulletShoot : MonoBehaviour
     public float time = 1.0f;
     public float timer = 0;
 
-    void Start()
-    {
-
-    }
-
     private void Update()
     {
         timer += Time.deltaTime;
@@ -28,7 +23,7 @@ public class BulletShoot : MonoBehaviour
 
     void shootBullet()
     {
-            Instantiate(bulletsPrefab, transform.position, Quaternion.identity);
-            Debug.Log("yeah fight back");
+        Instantiate(bulletsPrefab, transform.position, Quaternion.identity);
+        Debug.Log("yeah fight back");
     }
 }

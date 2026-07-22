@@ -4,6 +4,7 @@ public class EnemyProjectile : MonoBehaviour
 {
     public float speed;
     private PointManager pointManager;
+    public GameObject bulletsPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,12 +22,11 @@ public class EnemyProjectile : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            pointManager.UpDateScore(-10);
+            pointManager.UpDateScore(0);
         }
-        if (collision.gameObject.tag == "Boundary")
+        if (collision.CompareTag("Despawn"))
         {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            Destroy(bulletsPrefab);
         }
     }
 }

@@ -317,6 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullets
   bulletsPrefab: {fileID: 8219168850163725661, guid: b6d3e34a5bded9c46b2be75369e53d86, type: 3}
   time: 1
+  fireRate: 0.75
   timer: 1
 --- !u!95 &86160580
 Animator:

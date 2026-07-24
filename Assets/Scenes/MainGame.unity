@@ -1335,6 +1335,8 @@ MonoBehaviour:
   finalScoreText: {fileID: 746279531}
   highScoreText: {fileID: 1255831139}
   finalTimeText: {fileID: 1956013511}
+  scoreText: {fileID: 0}
+  score: 0
 --- !u!1 &746279528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2197,7 +2199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   timerText: {fileID: 1674809070}
-  remainingTime: 5
+  remainingTime: 30
   gameOverManager: {fileID: 446252807}
   finalTimeText: {fileID: 2143933801}
 --- !u!1 &1184368074

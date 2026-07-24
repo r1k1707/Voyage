@@ -7,12 +7,12 @@ public class PlayerLives : MonoBehaviour
     public int lives = 3;
     public Image[] livesUI;
     public float invincibleTime = 1f;
+    public GameOverManager gameOverManager;
 
     private SpriteRenderer spriteRenderer;
     private bool canTakeDamage = true;
     private bool isDead;
 
-    public GameOverManager gameOverManager;
     private PointManager pointManager;
     private TimerController timer;
 

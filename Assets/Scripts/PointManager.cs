@@ -31,25 +31,17 @@ public class PointManager : MonoBehaviour
     // Checks if the current score is higher than the highscore
     public void HighScoreUpdate()
     {
+        int savedHighScore = PlayerPrefs.GetInt("SavedHighScore", 0);
+        Debug.Log("Current score: " + score);
 
-        if (PlayerPrefs.HasKey("SavedHighScore"))
+        if (score > savedHighScore)
         {
-            if (score > PlayerPrefs.GetInt("SavedHighScore"))
-            {
-                PlayerPrefs.SetInt("SavedHighScore", score);
-            }
+            savedHighScore = score;
+
+            PlayerPrefs.SetInt("SavedHighScore", savedHighScore);
+            PlayerPrefs.Save();
         }
-        else
-        {
-            PlayerPrefs.SetInt("SavedHighScore", score);
-        }
-        if (score > highscore)
-        {
-            highscore = score;
-            PlayerPrefs.SetInt("SavedHighScore", highscore);
-            PlayerPrefs.Save(); // Ensures data is written immediately
-        }
-        finalScoreText.text = scoreText.text;
-        highScoreText.text = highScoreText.text;
+        finalScoreText.text = "Score: " + score;
+        highScoreText.text = "High Score: " + savedHighScore;
     }
 }

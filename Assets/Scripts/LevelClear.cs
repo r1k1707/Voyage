@@ -9,7 +9,6 @@ public class LevelClear : MonoBehaviour
     public TMP_Text finalScoreText;
     public TMP_Text highScoreText;
     public TMP_Text finalTimeText;
-    public TMP_Text scoreText;
     public int score;
     public static int highscore;
     private PointManager pointManager;
@@ -37,36 +36,24 @@ public class LevelClear : MonoBehaviour
 
     void ShowResults()
     {
-        // Final score
         if (pointManager != null)
         {
-            finalScoreText.text = scoreText.text;
+            finalScoreText.text = "Score: " + pointManager.score;
+
+            int score = pointManager.score;
+
+            if (score > PlayerPrefs.GetInt("SavedHighScore", 0))
+            {
+                PlayerPrefs.SetInt("SavedHighScore", score);
+                PlayerPrefs.Save();
+            }
+
+            highScoreText.text = "High Score: " + PlayerPrefs.GetInt("SavedHighScore");
         }
 
-        // Final time
         if (timerController != null)
         {
             finalTimeText.text = timerController.timerText.text;
         }
-        if (PlayerPrefs.HasKey("SavedHighScore"))
-        {
-            if (score > PlayerPrefs.GetInt("SavedHighScore"))
-            {
-                PlayerPrefs.SetInt("SavedHighScore", score);
-            }
-        }
-        else
-        {
-            PlayerPrefs.SetInt("SavedHighScore", score);
-        }
-        if (score > highscore)
-        {
-            highscore = score;
-            PlayerPrefs.SetInt("SavedHighScore", highscore);
-            PlayerPrefs.Save(); // Ensures data is written immediately
-        }
-
-        // High score
-        highScoreText.text = highScoreText.text;
     }
 }

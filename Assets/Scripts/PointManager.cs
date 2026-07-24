@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -5,6 +7,8 @@ public class PointManager : MonoBehaviour
 {
 
     public int score;
+    public static int highscore;
+    public static int newHighscore;
     public TMP_Text scoreText;
 
     public TMP_Text finalScoreText;
@@ -24,8 +28,10 @@ public class PointManager : MonoBehaviour
         scoreText.text = "Score: " + score;
     }
 
+    // Checks if the current score is higher than the highscore
     public void HighScoreUpdate()
     {
+
         if (PlayerPrefs.HasKey("SavedHighScore"))
         {
             if (score > PlayerPrefs.GetInt("SavedHighScore"))
@@ -37,11 +43,13 @@ public class PointManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("SavedHighScore", score);
         }
-
-        PlayerPrefs.Save();
-
-        finalScoreText.text = score.ToString();
-        highScoreText.text = PlayerPrefs.GetInt("SavedHighScore").ToString();
+        if (score > highscore)
+        {
+            highscore = score;
+            PlayerPrefs.SetInt("SavedHighScore", highscore);
+            PlayerPrefs.Save(); // Ensures data is written immediately
+        }
+        finalScoreText.text = scoreText.text;
+        highScoreText.text = highScoreText.text;
     }
-
 }
